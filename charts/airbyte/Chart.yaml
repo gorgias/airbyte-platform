@@ -51,7 +51,7 @@ dependencies:
     version: 0.50.2
   - condition: worker.enabled
     name: worker
-    repository: https://airbytehq.github.io/helm-charts/
+    repository: https://core-ops-charts.storage.googleapis.com/airbyte-worker/
     version: 0.50.2
   - condition: pod-sweeper.enabled
     name: pod-sweeper
