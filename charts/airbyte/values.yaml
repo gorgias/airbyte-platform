@@ -714,9 +714,9 @@ server:
 worker:
   enabled: true
   ##  worker.replicaCount Number of worker replicas
-  replicaCount: 1
+  replicaCount: 3
   autoscaler:
-    enabled: false
+    enabled: true
     minReplicas: 2
     maxReplicas: 4
     extra: {}
@@ -828,7 +828,9 @@ worker:
   ## extraEnv:
   ## - name: JOB_KUBE_TOLERATIONS
   ##   value: "key=airbyte-server,operator=Equals,value=true,effect=NoSchedule"
-  extraEnv: []
+  extraEnv:
+    - name: CONTAINER_ORCHESTRATOR_ENABLED
+      value: true
 
   ##  worker.extraVolumeMounts [array] Additional volumeMounts for worker container(s).
   ## Examples (when using `worker.containerSecurityContext.readOnlyRootFilesystem=true`):

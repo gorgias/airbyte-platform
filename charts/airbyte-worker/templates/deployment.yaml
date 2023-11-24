@@ -8,9 +8,9 @@ metadata:
     {{ toYaml (mergeOverwrite .Values.extraLabels .Values.global.extraLabels) | nindent 4 }}
     {{- end }}
 spec:
-  {{- if .Values.autoscaler.enabled}}
+{{- if eq .Values.autoscaler.enabled false }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
+{{- end }}
   selector:
     matchLabels:
       {{- include "airbyte.selectorLabels" . | nindent 6 }}

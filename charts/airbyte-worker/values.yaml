@@ -128,9 +128,9 @@ global:
 
 enabled: true
 ##  worker.replicaCount Number of worker replicas
-replicaCount: 1
+replicaCount: 3
 autoscaler:
-  enabled: false
+  enabled: true
   minReplicas: 2
   maxReplicas: 4
   extra: {}
@@ -308,7 +308,10 @@ extraInitContainers: []
 #         name: airbyte-env
 #         key: INTERNAL_API_HOST
 ##
-extraEnv: []
+extraEnv:
+  - name: "CONTAINER_ORCHESTRATOR_ENABLED"
+    value: "true"
+
 ##  secrets [object] Supply additional secrets to container
 ## Example:
 ## secrets:
@@ -398,8 +401,7 @@ secrets: {}
 #   ACTIVITY_INITIAL_DELAY_BETWEEN_ATTEMPTS_SECONDS:
 #   ACTIVITY_MAX_DELAY_BETWEEN_ATTEMPTS_SECONDS:
 #   WORKFLOW_FAILURE_RESTART_DELAY_SECONDS:
-env_vars:
-  CONTAINER_ORCHESTRATOR_ENABLED: true
+env_vars: {}
 
 ## extraSelectorLables [object] - use to specify own additional selector labels for deployment
 extraSelectorLabels: {}
