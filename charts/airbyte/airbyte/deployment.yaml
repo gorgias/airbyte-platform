@@ -5,7 +5,7 @@ kind: Secret
 metadata:
   name: release-name-gcs-log-creds
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -21,10 +21,10 @@ metadata:
   name: release-name-pod-sweeper-sweep-pod-script
   namespace: airbyte
   labels:
-    helm.sh/chart: pod-sweeper-0.50.2
+    helm.sh/chart: pod-sweeper-0.49.6
     app.kubernetes.io/name: pod-sweeper
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 
 data:
@@ -97,10 +97,10 @@ kind: ConfigMap
 metadata:
   name: release-name-temporal-dynamicconfig
   labels:
-    helm.sh/chart: temporal-0.50.2
+    helm.sh/chart: temporal-0.49.6
     app.kubernetes.io/name: temporal
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 data:
   "development.yaml": |
@@ -175,10 +175,10 @@ kind: Service
 metadata:
   name: release-name-airbyte-api-server-svc
   labels:
-    helm.sh/chart: airbyte-api-server-0.50.2
+    helm.sh/chart: airbyte-api-server-0.49.6
     app.kubernetes.io/name: airbyte-api-server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -197,10 +197,10 @@ kind: Service
 metadata:
   name: release-name-airbyte-connector-builder-server-svc
   labels:
-    helm.sh/chart: connector-builder-server-0.50.2
+    helm.sh/chart: connector-builder-server-0.49.6
     app.kubernetes.io/name: connector-builder-server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: NodePort
@@ -219,10 +219,10 @@ kind: Service
 metadata:
   name: release-name-airbyte-server-svc
   labels:
-    helm.sh/chart: server-0.50.2
+    helm.sh/chart: server-0.49.6
     app.kubernetes.io/name: server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -241,10 +241,10 @@ kind: Service
 metadata:
   name: release-name-temporal
   labels:
-    helm.sh/chart: temporal-0.50.2
+    helm.sh/chart: temporal-0.49.6
     app.kubernetes.io/name: temporal
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -262,10 +262,10 @@ kind: Service
 metadata:
   name: release-name-airbyte-webapp-svc
   labels:
-    helm.sh/chart: webapp-0.50.2
+    helm.sh/chart: webapp-0.49.6
     app.kubernetes.io/name: webapp
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -284,10 +284,10 @@ kind: Deployment
 metadata:
   name: release-name-airbyte-api-server
   labels:
-    helm.sh/chart: airbyte-api-server-0.50.2
+    helm.sh/chart: airbyte-api-server-0.49.6
     app.kubernetes.io/name: airbyte-api-server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -306,7 +306,7 @@ spec:
       serviceAccountName: airbyte-admin
       containers:
       - name: airbyte-api-server
-        image: airbyte/airbyte-api-server:0.50.34
+        image: airbyte/airbyte-api-server:0.50.33
         imagePullPolicy: "IfNotPresent"
         env:
         - name: INTERNAL_API_HOST
@@ -365,10 +365,10 @@ kind: Deployment
 metadata:
   name: release-name-connector-builder-server
   labels:
-    helm.sh/chart: connector-builder-server-0.50.2
+    helm.sh/chart: connector-builder-server-0.49.6
     app.kubernetes.io/name: connector-builder-server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -387,7 +387,7 @@ spec:
       serviceAccountName: airbyte-admin
       containers:
       - name: airbyte-connector-builder-server
-        image: airbyte/connector-builder-server:0.50.34
+        image: airbyte/connector-builder-server:0.50.33
         imagePullPolicy: "IfNotPresent"
         env:
         - name: AIRBYTE_VERSION
@@ -436,10 +436,10 @@ kind: Deployment
 metadata:
   name: release-name-cron
   labels:
-    helm.sh/chart: cron-0.50.2
+    helm.sh/chart: cron-0.49.6
     app.kubernetes.io/name: cron
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -457,7 +457,7 @@ spec:
       automountServiceAccountToken: true
       containers:
         - name: airbyte-cron
-          image: airbyte/cron:0.50.34
+          image: airbyte/cron:0.50.33
           imagePullPolicy: "IfNotPresent"
           env:
           - name: AIRBYTE_VERSION
@@ -505,16 +505,6 @@ spec:
               configMapKeyRef:
                 name: release-name-airbyte-env
                 key: WORKFLOW_FAILURE_RESTART_DELAY_SECONDS
-          - name: WORKLOAD_API_BEARER_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: release-name-airbyte-secrets
-                key: WORKLOAD_API_BEARER_TOKEN
-          - name: WORKLOAD_API_HOST
-            valueFrom:
-              configMapKeyRef:
-                name: release-name-airbyte-env
-                key: WORKLOAD_API_HOST
           - name: WORKSPACE_DOCKER_MOUNT
             valueFrom:
               configMapKeyRef:
@@ -542,10 +532,10 @@ metadata:
   name: release-name-pod-sweeper-pod-sweeper
   namespace: airbyte
   labels:
-    helm.sh/chart: pod-sweeper-0.50.2
+    helm.sh/chart: pod-sweeper-0.49.6
     app.kubernetes.io/name: pod-sweeper
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
     namespace: airbyte
 spec:
@@ -560,7 +550,7 @@ spec:
         app.kubernetes.io/name: pod-sweeper
         app.kubernetes.io/instance: release-name
       annotations:
-        checksum/sweep-pod-script: 24c1fdc0bcb84080e3233ade20270aaf53cde13f64c0c355838539f77384ada7
+        checksum/sweep-pod-script: 349dac054d354b72ac9e470e4a780e000459ad26167f150547f4aa151ce0037c
     spec:
       serviceAccountName: airbyte-admin
       containers:
@@ -624,10 +614,10 @@ kind: Deployment
 metadata:
   name: release-name-server
   labels:
-    helm.sh/chart: server-0.50.2
+    helm.sh/chart: server-0.49.6
     app.kubernetes.io/name: server
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -646,7 +636,7 @@ spec:
       serviceAccountName: airbyte-admin
       containers:
       - name: airbyte-server-container
-        image: airbyte/server:0.50.34
+        image: airbyte/server:0.50.33
         imagePullPolicy: "IfNotPresent"
         env:
         - name: AIRBYTE_VERSION
@@ -867,10 +857,10 @@ kind: Deployment
 metadata:
   name: release-name-temporal
   labels:
-    helm.sh/chart: temporal-0.50.2
+    helm.sh/chart: temporal-0.49.6
     app.kubernetes.io/name: temporal
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -938,10 +928,10 @@ kind: Deployment
 metadata:
   name: release-name-webapp
   labels:
-    helm.sh/chart: webapp-0.50.2
+    helm.sh/chart: webapp-0.49.6
     app.kubernetes.io/name: webapp
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -958,7 +948,7 @@ spec:
       serviceAccountName: airbyte-admin
       containers:
       - name: airbyte-webapp-container
-        image: airbyte/webapp:0.50.34
+        image: airbyte/webapp:0.50.33
         imagePullPolicy: "IfNotPresent"
         env:
         - name: TRACKING_STRATEGY
@@ -1034,10 +1024,10 @@ kind: Deployment
 metadata:
   name: release-name-worker
   labels:
-    helm.sh/chart: worker-0.50.2
+    helm.sh/chart: worker-0.49.6
     app.kubernetes.io/name: worker
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "dev"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
 spec:
   selector:
@@ -1054,7 +1044,7 @@ spec:
       automountServiceAccountToken: true
       containers:
       - name: airbyte-worker-container
-        image: airbyte/worker:dev
+        image: airbyte/worker:0.50.33
         imagePullPolicy: "IfNotPresent"
         env:
         - name: AIRBYTE_VERSION
@@ -1217,16 +1207,6 @@ spec:
             configMapKeyRef:
               name: release-name-airbyte-env
               key: INTERNAL_API_HOST
-        - name: WORKLOAD_API_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: release-name-airbyte-env
-              key: WORKLOAD_API_HOST
-        - name: WORKLOAD_API_BEARER_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: release-name-airbyte-secrets
-              key: WORKLOAD_API_BEARER_TOKEN
         - name: CONFIGS_DATABASE_MINIMUM_FLYWAY_MIGRATION_VERSION
           valueFrom:
             configMapKeyRef:
@@ -1413,7 +1393,7 @@ kind: ServiceAccount
 metadata:
   name: airbyte-admin
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1431,7 +1411,7 @@ metadata:
     helm.sh/hook: pre-install,pre-upgrade
     helm.sh/hook-weight: "-1"
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1444,7 +1424,6 @@ stringData:
   DATABASE_USER: airbyte
   STATE_STORAGE_MINIO_ACCESS_KEY: "minio"
   STATE_STORAGE_MINIO_SECRET_ACCESS_KEY: "minio123"
-  WORKLOAD_API_BEARER_TOKEN: ".Values.workload-api.bearerToken"
 ---
 # Source: airbyte/templates/airbyte-yml-configmap.yaml
 # The ConfigMap that contains the airbyte.yml content. For this to work helm must be started with
@@ -1460,7 +1439,7 @@ metadata:
     helm.sh/hook: pre-install,pre-upgrade
     helm.sh/hook-weight: "-1"
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1478,7 +1457,7 @@ metadata:
     helm.sh/hook: pre-install,pre-upgrade
     helm.sh/hook-weight: "-1"
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1499,7 +1478,6 @@ data:
   GCS_LOG_BUCKET: ""
   GOOGLE_APPLICATION_CREDENTIALS: ""
   INTERNAL_API_HOST: release-name-airbyte-server-svc:8001
-  WORKLOAD_API_HOST: release-name-workload-api:8007
   KEYCLOAK_INTERNAL_HOST: localhost # just a placeholder so that nginx template is valid - shouldn't be used when edition isn't "pro"
   CONNECTOR_BUILDER_API_HOST: release-name-airbyte-connector-builder-server-svc:80
   AIRBYTE_API_HOST: release-name-airbyte-api-server-svc:80
@@ -1514,7 +1492,7 @@ data:
   S3_LOG_BUCKET_REGION: ""
   S3_MINIO_ENDPOINT: "http://airbyte-minio-svc:9000"
   S3_PATH_STYLE_ACCESS: "true"
-  STATE_STORAGE_MINIO_BUCKET_NAME: state-storage
+  STATE_STORAGE_MINIO_BUCKET_NAME: airbyte-state-storage
   STATE_STORAGE_MINIO_ENDPOINT: "http://airbyte-minio-svc:9000"
   TEMPORAL_HOST: release-name-temporal:7233
   TEMPORAL_WORKER_PORTS: 9001,9002,9003,9004,9005,9006,9007,9008,9009,9010,9011,9012,9013,9014,9015,9016,9017,9018,9019,9020,9021,9022,9023,9024,9025,9026,9027,9028,9029,9030,9031,9032,9033,9034,9035,9036,9037,9038,9039,9040
@@ -1530,8 +1508,8 @@ data:
   ACTIVITY_MAX_DELAY_BETWEEN_ATTEMPTS_SECONDS: ""
   WORKFLOW_FAILURE_RESTART_DELAY_SECONDS: ""
   AUTO_DETECT_SCHEMA: "true"
+  CONTAINER_ORCHESTRATOR_ENABLED: 
   CONTAINER_ORCHESTRATOR_IMAGE: ""
-  LAUNCHER_MICRONAUT_ENVIRONMENTS: "control-plane,oss"
   WORKERS_MICRONAUT_ENVIRONMENTS: "control-plane"
   CRON_MICRONAUT_ENVIRONMENTS: "control-plane"
   WORKER_LOGS_STORAGE_TYPE: "MINIO"
@@ -1549,7 +1527,7 @@ metadata:
     helm.sh/hook-weight: "-1"
   labels:
     
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: release-name-db
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1571,7 +1549,7 @@ metadata:
   name: airbyte-minio-svc
   labels:
     
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: release-name-minio
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1595,10 +1573,10 @@ kind: Pod
 metadata:
   name: release-name-airbyte-bootloader
   labels:
-    helm.sh/chart: airbyte-bootloader-0.50.2
+    helm.sh/chart: airbyte-bootloader-0.49.6
     app.kubernetes.io/name: airbyte-bootloader
     app.kubernetes.io/instance: release-name
-    app.kubernetes.io/version: "0.50.34"
+    app.kubernetes.io/version: "0.50.33"
     app.kubernetes.io/managed-by: Helm
   annotations:
     helm.sh/hook: pre-install,pre-upgrade
@@ -1608,7 +1586,7 @@ spec:
   restartPolicy: Never
   containers:
     - name: airbyte-bootloader-container
-      image: airbyte/bootloader:0.50.34
+      image: airbyte/bootloader:0.50.33
       imagePullPolicy: "IfNotPresent"
       env:
         - name: AIRBYTE_VERSION
@@ -1655,40 +1633,13 @@ spec:
         limits: {}
         requests: {}
 ---
-# Source: airbyte/templates/minio.yaml
-# This pod creates the state-storage bucket in the minio server,
-# which the local cloud deployment requires to store its state.
-apiVersion: v1
-kind: Pod
-metadata:
-  name: airbyte-minio-create-bucket
-  annotations:
-    "helm.sh/hook": post-install
-    "helm.sh/hook-delete-policy": hook-succeeded
-spec:
-  restartPolicy: OnFailure
-  containers:
-    - name: minio-mc
-      image: minio/mc
-      command: ["/bin/sh", "-c",
-        "until (/usr/bin/mc config host add myminio $MINIO_ENDPOINT $MINIO_ACCESS_KEY $MINIO_SECRET_KEY) do echo '...waiting...' && sleep 1; done;
-          /usr/bin/mc mb --ignore-existing myminio/state-storage;
-          /usr/bin/mc policy set public myminio/state-storage;"]
-      env:
-        - name: MINIO_ACCESS_KEY
-          value: minio
-        - name: MINIO_SECRET_KEY
-          value: minio123
-        - name: MINIO_ENDPOINT
-          value: http://airbyte-minio-svc:9000
----
 # Source: airbyte/templates/tests/test-webapp.yaml
 apiVersion: v1
 kind: Pod
 metadata:
   name: "release-name-airbyte-test-connection"
   labels:
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: airbyte
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1713,7 +1664,7 @@ metadata:
     helm.sh/hook-weight: "-1"
   labels:
     
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: release-name-db
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"
@@ -1770,7 +1721,7 @@ metadata:
     helm.sh/hook-weight: "-1"
   labels:
     
-    helm.sh/chart: airbyte-0.50.2
+    helm.sh/chart: airbyte-0.49.6
     app.kubernetes.io/name: release-name-minio
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/version: "0.50.33"

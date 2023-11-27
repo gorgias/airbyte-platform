@@ -35,7 +35,7 @@ version: 0.1.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "dev"
+appVersion: 0.50.6
 
 dependencies:
   - name: common
@@ -67,14 +67,6 @@ dependencies:
     name: worker
     repository: "file://../airbyte-worker"
     version: "*"
-  - condition: workload-api.enabled
-    name: workload-api
-    repository: "file://../airbyte-workload-api-server"
-    version: "*"
-  - condition: workload-launcher.enabled
-    name: workload-launcher
-    repository: "file://../airbyte-workload-launcher"
-    version: "*"
   - condition: pod-sweeper.enabled
     name: pod-sweeper
     repository: "file://../airbyte-pod-sweeper"
@@ -91,12 +83,3 @@ dependencies:
     name: connector-builder-server
     repository: "file://../airbyte-connector-builder-server"
     version: "*"
-  - condition: keycloak.enabled
-    name: keycloak
-    repository: "file://../airbyte-keycloak"
-    version: "*"
-  - condition: keycloak-setup.enabled
-    name: keycloak-setup
-    repository: "file://../airbyte-keycloak-setup"
-    version: "*"
-

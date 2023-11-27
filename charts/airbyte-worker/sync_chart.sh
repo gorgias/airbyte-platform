@@ -1,1 +1,1 @@
-helm package . && mv worker-0.50.2.tgz airbyte-worker/ && helm repo index airbyte-worker --url https://core-ops-charts.storage.googleapis.com/airbyte-worker &&  gsutil rsync airbyte-worker/ gs://core-ops-charts/airbyte-worker/
+helm package . && mv worker-0.49.6.tgz airbyte-worker/ && helm repo index airbyte-worker --url https://core-ops-charts.storage.googleapis.com/airbyte-worker &&  gsutil rsync airbyte-worker/ gs://core-ops-charts/airbyte-worker/

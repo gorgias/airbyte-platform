@@ -1,1 +1,1 @@
-helm dependency update && helm dependency build && helm package . && mv airbyte-0.50.2.tgz airbyte/ && helm repo index airbyte --url https://core-ops-charts.storage.googleapis.com/airbyte &&  gsutil rsync airbyte/ gs://core-ops-charts/airbyte/
+helm dependency update && helm dependency build && helm package . && mv airbyte-0.49.6.tgz airbyte/ && helm repo index airbyte --url https://core-ops-charts.storage.googleapis.com/airbyte &&  gsutil rsync airbyte/ gs://core-ops-charts/airbyte/
